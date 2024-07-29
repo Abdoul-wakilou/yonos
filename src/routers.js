@@ -9,6 +9,7 @@ import CommencerComponent from './components/CommencerComponent.vue'
 import DevisComponent from './components/DevisComponent.vue'
 import ContratComponent from './components/ContratComponent.vue'
 import ComprendreAssurranceComponent from './components/ComprendreAssurranceComponent.vue'
+import ContexteComponent from './components/ComprendreAssurranceComponent.vue'
 
 import { createRouter, createWebHistory } from 'vue-router'
 
@@ -22,6 +23,11 @@ const routes = [
         name: 'MonCompte',
         component: MonCompteComponent,
         path: '/mon-compte'
+    },
+    {
+        name: 'Contexte',
+        component: ContexteComponent,
+        path: '/contexte'
     },
     {
         name: 'Objectif',

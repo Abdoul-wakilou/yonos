@@ -1,10 +1,10 @@
 <template>
-    <div></div>
+    <div>contexte</div>
   </template>
   
   <script>
   export default {
-    name: 'AssurranceComponent',
+    name: 'ContexteComponent',
   };
   </script>
   

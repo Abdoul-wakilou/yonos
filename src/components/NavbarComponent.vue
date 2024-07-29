@@ -8,22 +8,25 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">Contexte</a>
+          <router-link to="/contexte" class="nav-link">Contexte</router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Objectifs</a>
+          <!-- <a class="nav-link" href="#">Objectifs</a> -->
+          <router-link to="/objectif" class="nav-link">Ojectifs</router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Assurances</a>
+            <router-link to="/assurrance" class="nav-link">Assurrances</router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Formations</a>
+            <router-link to="/formation" class="nav-link">Formations</router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Astuces</a>
+            <router-link to="/astuce" class="nav-link">Astuces</router-link>
         </li>
       </ul>
-      <button class="btn btn-custom">Mon Compte</button>
+      <router-link to="/mon-compte">
+        <button class="btn btn-custom">Mon Compte</button>
+      </router-link>
     </div>
   </nav>
 </template>

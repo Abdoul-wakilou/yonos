@@ -1,16 +1,14 @@
 <template>
-  <AccueilComponent/>
+  <router-view />
 </template>
 
 <script>
 
-import AccueilComponent from './components/AccueilComponent.vue'
+//import AccueilComponent from './components/AccueilComponent.vue'
 
 export default {
   name: 'App',
-  components: {
-    AccueilComponent
-  }
+  
 }
 </script>
 
