@@ -37,7 +37,7 @@ export default {
 <style scoped>
 .navbar-custom {
       background-color: #ffcc66;
-      height: 70px;
+      height: 100px;
     }
     .navbar-nav {
       flex: 1;
