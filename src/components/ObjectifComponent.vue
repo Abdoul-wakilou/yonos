@@ -60,7 +60,7 @@ import NavbarComponent from './NavbarComponent.vue';
   
   <style scoped>
   .section-title {
-    color: #a0418e;
+    color: #993399;
     text-align: center;
     margin-top: 40px;
     margin-bottom: 20px;
@@ -78,7 +78,7 @@ import NavbarComponent from './NavbarComponent.vue';
 }
 .btn-custom {
     background-color: #ffcc66;
-    color: #a0418e;
+    color: #993399;
     font-weight: bold;
     border: none;
     border-radius: 25px;
@@ -89,7 +89,7 @@ import NavbarComponent from './NavbarComponent.vue';
     height: 100%;
 }
 .btn-custom:hover {
-    background-color: #ffb833;
+    background-color: #ffcc66;
     color: #fff;
 }
 .icon {
@@ -116,7 +116,7 @@ import NavbarComponent from './NavbarComponent.vue';
     }
 }
 .card-title {
-    color: #a0418e;
+    color: #993399;
     font-weight: bold;
 }
 

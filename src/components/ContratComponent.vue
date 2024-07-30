@@ -3,6 +3,8 @@
   </template>
   
   <script>
+  import NavbarComponent from './NavbarComponent.vue';
+   
   export default {
     name: 'ContratComponent',
   };
@@ -11,7 +13,7 @@
   <style scoped>
     @media (max-width: 768px) {
       .navbar {
-          z-index: 1000;
+        z-index: 1000;
       }
     }
   </style>
