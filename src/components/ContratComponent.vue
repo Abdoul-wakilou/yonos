@@ -1,5 +1,5 @@
 <template>
-    <div></div>
+    <NavbarComponent class="navbar"></NavbarComponent>
   </template>
   
   <script>
@@ -8,4 +8,10 @@
   };
   </script>
   
-  <style scoped></style>
+  <style scoped>
+    @media (max-width: 768px) {
+      .navbar {
+          z-index: 1000;
+      }
+    }
+  </style>

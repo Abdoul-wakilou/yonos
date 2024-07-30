@@ -1,5 +1,5 @@
 <template>
-    <NavbarComponent/>
+    <NavbarComponent class="navbar"></NavbarComponent>
 <div class="container">
         <h2 class="section-title">Atteingez vos objectifs avec assurance</h2>
         <div class="row">
@@ -111,9 +111,13 @@ import NavbarComponent from './NavbarComponent.vue';
     .btn-custom {
         width: 60%;
     }
+    .navbar {
+        z-index: 1000;
+    }
 }
 .card-title {
     color: #a0418e;
     font-weight: bold;
 }
+
 </style>

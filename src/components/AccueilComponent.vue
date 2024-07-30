@@ -1,5 +1,5 @@
 <template>
-<NavbarComponent></NavbarComponent>
+<NavbarComponent class="navbar"></NavbarComponent>
 <BodyComponent></BodyComponent>
 <FooterComponent></FooterComponent>
 
@@ -23,5 +23,9 @@ export default {
 </script>
 
 <style scoped>
-
+@media (max-width: 768px) {
+  .navbar {
+    z-index: 1000;
+  }
+}
 </style>

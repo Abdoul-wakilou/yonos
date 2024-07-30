@@ -18,7 +18,6 @@ export default {
     /* CSS pour le corps de la page */
     .main-section {
       position: relative;
-      height: 100%;
       background: #f2e5f2;
       display: flex;
       flex-direction: column;
