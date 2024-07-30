@@ -9,7 +9,7 @@ import CommencerComponent from './components/CommencerComponent.vue'
 import DevisComponent from './components/DevisComponent.vue'
 import ContratComponent from './components/ContratComponent.vue'
 import ComprendreAssurranceComponent from './components/ComprendreAssurranceComponent.vue'
-import ContexteComponent from './components/ComprendreAssurranceComponent.vue'
+import ContexteComponent from './components/ContexteComponent.vue'
 
 import { createRouter, createWebHistory } from 'vue-router'
 

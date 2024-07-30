@@ -25,7 +25,7 @@
         </li>
       </ul>
       <router-link to="/mon-compte">
-        <button class="btn btn-custom">Mon Compte</button>
+      <button class="btn btn-custom">Mon Compte</button>
       </router-link>
     </div>
   </nav>
