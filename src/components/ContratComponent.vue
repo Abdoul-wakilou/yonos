@@ -4,9 +4,12 @@
   
   <script>
   import NavbarComponent from './NavbarComponent.vue';
-   
+
   export default {
     name: 'ContratComponent',
+    components: {
+        NavbarComponent,
+    }
   };
   </script>
   

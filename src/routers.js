@@ -1,7 +1,7 @@
 import MonCompteComponent from './components/MonCompteComponent.vue'
 import AccueilComponent from './components/AccueilComponent.vue'
 import ObjectifComponent from './components/ObjectifComponent.vue'
-import AssuranceComponent from './components/AssuranceComponent.vue'
+import AssurranceComponent from './components/AssurranceComponent.vue'
 import FormationComponent from './components/FormationComponent.vue'
 import AstuceComponent from './components/AstuceComponent.vue'
 import InscriptionComponent from './components/InscriptionComponent.vue'
@@ -36,8 +36,8 @@ const routes = [
     },
     {
         name: 'Assurance',
-        component: AssuranceComponent,
-        path: '/assurance'
+        component: AssurranceComponent,
+        path: '/assurrance'
     },
     {
         name: 'Formation',

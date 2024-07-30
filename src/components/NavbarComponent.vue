@@ -1,7 +1,8 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-custom">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="../assets/img/logo.png" alt="Logo" class="img-fluid" style="max-height: 50px;"></a>
+      <router-link to="/" class="navbar-brand"><img src="../assets/img/logo.png" alt="Logo" class="img-fluid" style="max-height: 50px;"></router-link>
+    
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -58,7 +59,7 @@ export default {
 
 .navbar-nav .nav-item .nav-link {
   color: black;
- 
+  margin: 0 10px;
   transition: color 0.3s;
 }
 
