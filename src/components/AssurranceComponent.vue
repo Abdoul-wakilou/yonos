@@ -15,11 +15,15 @@
             <p class="price">{{ offer.price }}</p>
           </div>
           <p class="description">{{ offer.description }}</p>
-          <button class="offer-button">{{ offer.buttonText }}</button>
+          <div class="button-container">
+            <button class="offer-button">{{ offer.buttonText }}</button>
+          </div>
           <ul class="features">
             <li v-for="feature in offer.features" :key="feature.text">
               <span :class="{'included': feature.included, 'excluded': !feature.included}">
-                <i v-if="feature.included" class="fas fa-check"></i> {{ feature.text }}
+                <i v-if="feature.included" class="fas fa-check"></i>
+                <i v-else class="fas fa-times"></i>
+                {{ feature.text }}
               </span>
             </li>
           </ul>
@@ -212,18 +216,19 @@ export default {
   justify-content: center;
   background-color: black;
   border-radius: 50px;
-  padding: 5px;
+  padding: 3px;
   margin-bottom: 20px;
-  width: 500px;
+  width: fit-content;
   text-align: center;
-  
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .type-selection button {
   background-color: black;
   color: white;
   border: white;
-  padding: 10px 20px;
+  padding: 5px 10px;
   margin: 0 5px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -243,18 +248,20 @@ export default {
 }
 
 .offer-card {
-  background-color: #f9f9f9;
-  border-radius: 10px;
+  background-color: #ffffff;
+  border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: 30%;
-  margin: 10px;
+  padding: 10px;
+  width: 25%;
+  margin: 5px;
   text-align: left;
+  border: 1px solid #999;
 }
 
 .offer-card h3 {
   font-size: 18px;
-  color: #333;
+  color: #000;
+  font-weight: bold;
 }
 
 .offer-header {
@@ -263,10 +270,7 @@ export default {
   color: black;
   font-weight: bold;
 }
-.h3 {
-  font-weight: bold;
-  color: black;
-}
+
 
 .price {
   font-size: 16px;
@@ -276,17 +280,26 @@ export default {
 
 .description {
   font-size: 14px;
-  color: #999;
+  color: rgb(102, 102, 94);
   margin: 10px 0;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
 .offer-button {
   background-color: #ffcc66;
   border: none;
-  padding: 10px;
+  padding: 5px 10px;
   border-radius: 20px;
-  color: white;
+  color: #993399;
   cursor: pointer;
+  text-align: center;
+  font-size: 15px;
+  width: 100%;
+  font-weight: bold;
 }
 
 .features {
