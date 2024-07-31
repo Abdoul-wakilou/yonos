@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "vue-cli-service build && cd dist && git init && git add -A && git commit -m 'deploy' && git push -f git@github.com:abdoul-wakilou/yonos.git master:gh-pages"
   },
   "dependencies": {
     "core-js": "^3.8.3",

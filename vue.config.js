@@ -1,4 +1,12 @@
-const { defineConfig } = require('@vue/cli-service')
+// const { defineConfig } = require('@vue/cli-service')
+// module.exports = defineConfig({
+//   transpileDependencies: true
+// })
+
+const { defineConfig } = require('@vue/cli-service');
 module.exports = defineConfig({
-  transpileDependencies: true
-})
+  transpileDependencies: true,
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/yonos/'
+    : '/'
+});
