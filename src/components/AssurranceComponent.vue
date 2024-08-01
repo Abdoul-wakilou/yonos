@@ -71,7 +71,7 @@ export default {
               { text: 'Newsletter avec des astuces', included: true },
               { text: 'Devis (2 offerts/an)', included: true },
               { text: 'Souscription (2 contrats/an)', included: true },
-              { text: 'Gestion de contrat', included: false },
+              { text: 'Gestion de contrat', included: true },
               { text: 'Stockage de tous vos contrats', included: false },
               { text: 'Bilan annuel', included: false },
             ],
@@ -110,7 +110,7 @@ export default {
           },
           {
             title: 'Souscription',
-            price: '3,99 € / mois',
+            price: '6,99 € / mois',
             description: 'Pour les assurés souhaitant conserver le pilotage de leurs assurances.',
             buttonText: '30 jours offerts',
             features: [
@@ -118,14 +118,14 @@ export default {
               { text: 'Newsletter avec des astuces', included: true },
               { text: 'Devis (2 offerts/an)', included: true },
               { text: 'Souscription (2 contrats/an)', included: true },
-              { text: 'Gestion de contrat', included: false },
+              { text: 'Gestion de contrat', included: true },
               { text: 'Stockage de tous vos contrats', included: false },
               { text: 'Bilan annuel', included: false },
             ],
           },
           {
             title: 'Gestion',
-            price: '6,99 € / mois',
+            price: '9,99 € / mois',
             description: 'Pour les assurés souhaitant confier toute la gestion de leurs assurances.',
             buttonText: '2 mois offerts',
             features: [
@@ -157,7 +157,7 @@ export default {
           },
           {
             title: 'Souscription',
-            price: '3,99 € / mois',
+            price: '9,99 € / mois',
             description: 'Pour les assurés souhaitant conserver le pilotage de leurs assurances.',
             buttonText: '30 jours offerts',
             features: [
@@ -165,14 +165,14 @@ export default {
               { text: 'Newsletter avec des astuces', included: true },
               { text: 'Devis (2 offerts/an)', included: true },
               { text: 'Souscription (2 contrats/an)', included: true },
-              { text: 'Gestion de contrat', included: false },
+              { text: 'Gestion de contrat', included: true },
               { text: 'Stockage de tous vos contrats', included: false },
               { text: 'Bilan annuel', included: false },
             ],
           },
           {
             title: 'Gestion',
-            price: '6,99 € / mois',
+            price: '12,99 € / mois',
             description: 'Pour les assurés souhaitant confier toute la gestion de leurs assurances.',
             buttonText: '2 mois offerts',
             features: [

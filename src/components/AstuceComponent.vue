@@ -5,25 +5,25 @@
       <h2 class="font-weight-bold">Profitez de nos conseils pratiques pour votre quotidien</h2>
       <div class="row my-4">
         <div class="col-md-4 mb-3">
-          <img src="../assets/img/question.PNG" alt="Conseil 1" class="img-fluid">
+          <img src="@/assets/img/question.png" alt="Conseil 1" class="img-fluid">
         </div>
         <div class="col-md-4 mb-3">
-          <img src="../assets/img/incapacite.PNG" alt="Conseil 2" class="img-fluid">
+          <img src="../assets/img/incapacite.png" alt="Conseil 2" class="img-fluid">
         </div>
         <div class="col-md-4 mb-3">
-          <img src="../assets/img/clauses.PNG" alt="Conseil 3" class="img-fluid">
+          <img src="../assets/img/clauses.png" alt="Conseil 3" class="img-fluid">
         </div>
       </div>
       <div class="newsletter-section mx-auto p-4">
         <h4>Inscrivez-vous à notre newsletter !</h4>
         <form>
-          <div class="input-group mb-3">
+          <div class="input-group mb-2">
             <input type="email" class="form-control" id="email" placeholder="E-mail">
             <div class="input-group-append">
               <button type="submit" class="btn btn-primary">S'inscrire</button>
             </div>
           </div>
-          <div class="form-check mt-3">
+          <div class="form-check mt-2">
             <input type="checkbox" class="form-check-input" id="terms">
             <label class="form-check-label" for="terms">J'accepte les termes et conditions</label>
           </div>
@@ -62,7 +62,8 @@ h2 {
 
 .newsletter-section h4 {
   color: #fff;
-  font-size: 14px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .form-control {

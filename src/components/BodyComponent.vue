@@ -4,7 +4,7 @@
       Simplifiez la gestion de vos assurances en les confiant au coach des
       assurés, Mr Yonos.
     </h1>
-    <button class="btn-custom-section btn">Commencer</button>
+    <router-link to="/objectif" class=""><button class="btn-custom-section btn">Commencer</button></router-link>
   </div>
 </template>
 
