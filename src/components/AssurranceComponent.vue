@@ -16,7 +16,7 @@
           </div>
           <p class="description">{{ offer.description }}</p>
           <div class="button-container">
-            <button class="offer-button">{{ offer.buttonText }}</button>
+            <button class="offer-button" @click="redirectToInscription">{{ offer.buttonText }}</button>
           </div>
           <ul class="features">
             <li v-for="feature in offer.features" :key="feature.text">
@@ -192,6 +192,9 @@ export default {
   methods: {
     setType(type) {
       this.activeType = type;
+    },
+    redirectToInscription() {
+      this.$router.push('/inscription');
     },
   },
 };

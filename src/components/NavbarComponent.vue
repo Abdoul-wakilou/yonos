@@ -24,9 +24,7 @@
             <router-link to="/astuce" class="nav-link">Astuces</router-link>
           </li>
         </ul>
-        <router-link to="/mon-compte">
-          <button class="btn btn-custom">Mon Compte</button>
-        </router-link>
+          <button class="btn btn-custom" @click="redirectToInscription">Mon Compte</button>
       </div>
     </div>
   </nav>
@@ -36,6 +34,11 @@
 <script>
 export default {
   name: 'NavbarComponent',
+  methods: {
+    redirectToInscription() {
+      this.$router.push('/mon-compte');
+    },
+  },
 };
 </script>
 

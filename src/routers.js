@@ -10,6 +10,9 @@ import DevisComponent from './components/DevisComponent.vue'
 import ContratComponent from './components/ContratComponent.vue'
 import ComprendreAssurranceComponent from './components/ComprendreAssurranceComponent.vue'
 import ContexteComponent from './components/ContexteComponent.vue'
+import CalendrierComponent from './components/CalendrierComponent.vue'
+import TemoignageComponent from './components/TemoignageComponent.vue'
+
 
 import { createRouter, createWebHistory } from 'vue-router'
 
@@ -73,6 +76,16 @@ const routes = [
         name: 'ComprendreAssurance',
         component: ComprendreAssurranceComponent,
         path: '/comprendre-assurance'
+    },
+    {
+        name: 'CalendrierComponent',
+        component: CalendrierComponent,
+        path: '/calendrier'
+    },
+    {
+        name: 'TemoignageComponent',
+        component: TemoignageComponent,
+        path: '/temoignage'
     }
 ];
 

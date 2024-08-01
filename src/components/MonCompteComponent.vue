@@ -19,7 +19,7 @@
             PAS ENCORE INSCRIT(E)?
           </div>
           <div class="card-body text-center">
-            <a href="/inscription" class="btn btn-custom">CREEZ VOTRE COMPTE</a>
+            <button class="btn btn-custom" @click="redirectToInscription">CREEZ VOTRE COMPTE</button>
           </div>
         </div>
         <div class="card card-custom">
@@ -29,10 +29,10 @@
           <div class="card-body text-center">
             <form>
               <div class="form-group">
-                <input type="email" class="form-control form-control-custom" id="email" placeholder="Adresse e-mail">
+                <input type="email" class="form-control form-control-custom" required id="email" placeholder="Adresse e-mail">
               </div>
               <div class="form-group">
-                <input type="password" class="form-control form-control-custom" id="password" placeholder="Mot de passe">
+                <input type="password" class="form-control form-control-custom" required id="password" placeholder="Mot de passe">
               </div>
               <div class="form-group text-center mot-passe">
                 <a href="/">Mot de passe oublié ?</a>
@@ -48,6 +48,11 @@
   <script>
   export default {
     name: 'MonCompteComponent',
+    methods: {
+    redirectToInscription() {
+      this.$router.push('/inscription');
+    },
+  },
   };
   </script>
   

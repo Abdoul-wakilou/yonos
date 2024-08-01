@@ -4,13 +4,18 @@
       Simplifiez la gestion de vos assurances en les confiant au coach des
       assurés, Mr Yonos.
     </h1>
-    <router-link to="/objectif" class=""><button class="btn-custom-section btn">Commencer</button></router-link>
+    <button class="btn-custom-section btn" @click="redirectToInscription">Commencer</button>
   </div>
 </template>
 
 <script>
 export default {
   name: "BodyComponent",
+  methods: {
+    redirectToInscription() {
+      this.$router.push('/inscription');
+    },
+  },
 };
 </script>
 

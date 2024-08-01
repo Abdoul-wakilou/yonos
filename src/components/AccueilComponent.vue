@@ -1,7 +1,7 @@
 <template>
 <NavbarComponent class="navbar"></NavbarComponent>
 <BodyComponent></BodyComponent>
-<FooterComponent></FooterComponent>
+
 
 </template>
 
@@ -9,15 +9,15 @@
 <script>
 import NavbarComponent from './NavbarComponent.vue';
 import BodyComponent from './BodyComponent.vue';
-import FooterComponent from './FooterComponent.vue';
-
+//import FooterComponent from './FooterComponent.vue';
+//FooterComponent
 
 export default {
   name: 'AccueilComponent',
   components: {
     NavbarComponent,
     BodyComponent,
-    FooterComponent
+    
   }
 }
 </script>

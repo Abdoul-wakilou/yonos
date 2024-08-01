@@ -18,15 +18,15 @@
         <div class="progress-bar" :style="{ width: progress + '%' }"></div>
       </div>
       
-      <form @submit.prevent="submitForm">
+      <form @submit.prevent="nextStep">
         <div v-if="step === 1" class="step-container">
-          <h2>Étape 1: Informations de base</h2>
-          <p>Quel est votre profil ?</p>
+          <h2>Quel est votre profil ?</h2>
+          
           <div class="options-container">
-            <button @click="selectProfile('particulier')" class="option-button">Je suis particulier</button>
-            <button @click="selectProfile('professionnel')" class="option-button">Je suis professionnel</button>
-            <button @click="selectProfile('entreprise')" class="option-button">Je suis entreprise</button>
-            <button @click="selectProfile('association')" class="option-button">Je suis association</button>
+            <button type="button" @click="selectProfile('particulier')" class="option-button">Je suis un particulier</button>
+            <button type="button" @click="selectProfile('professionnel')" class="option-button">Je suis un professionnel</button>
+            <button type="button" @click="selectProfile('entreprise')" class="option-button">Je suis une entreprise</button>
+            <button type="button" @click="selectProfile('association')" class="option-button">Je suis une association</button>
           </div>
         </div>
 
@@ -119,7 +119,7 @@
         </div>
         
         <div class="buttons-container">
-          <button v-if="step > 1" @click="prevStep" class="btn btn-custom">Précédent</button>
+          <button v-if="step > 1" @click.prevent="prevStep" class="btn btn-custom">Précédent</button>
           <button type="submit" class="btn btn-custom">
             {{ step < 5 ? 'Suivant' : 'Soumettre' }}
           </button>
@@ -188,6 +188,18 @@ export default {
 </script>
 
 <style scoped>
+@media (max-width: 768px) {
+  .options-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .option-button {
+    width: 80%;
+    max-width: 300px; /* Limite maximale pour la largeur des boutons */
+  }
+}
 .navbar-text {
   font-size: 1.5rem;
   font-weight: bold;
@@ -223,8 +235,9 @@ export default {
   font-weight: bold;
 }
 .option-button:hover {
-  background-color: #993399;
+  background-color: #ffcc66;
   color: #fff;
+  border: 2px solid #ffcc66;
 }
 .questions-container {
   display: flex;
