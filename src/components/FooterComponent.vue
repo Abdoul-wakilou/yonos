@@ -3,22 +3,36 @@
     <div class="container">
       <div class="row">
         <!-- Logo de l'entreprise -->
-        <div class="col-md-3">
-          <img src="../assets/img/footer-img.png" alt="Logo de l'entreprise" class="logo" />
+        <div class="col-md-3 col-sm-12 info">
+          <img src="../assets/img/footer-img.png" alt="Logo de l'entreprise" class="img-fluid logo" />
+          <P>Mr.Yonos est une société par actions simpliées, Immatriculée au registre de l'ORIAS en tant que Courtier en assurance sous le numéro……..</P>
         </div>
 
-        <!-- Liens vers les pages -->
-        <div class="col-md-6">
+        <div class="col-md-3 col-sm-12">
           <div class="links">
-            <a href="#">Qui sommes-nous</a>
-            <a href="#">Objectifs</a>
-            <a href="#">Nos assurances</a>
-            <!-- Ajoutez d'autres liens ici -->
+            <ul>
+              <li><router-link to="/contexte" class="nav-link">Contexte</router-link></li>
+              <li><router-link to="/objectif" class="nav-link">Objectifs</router-link></li>
+              <li><router-link to="/assurance" class="nav-link">Assurances</router-link></li>
+              <li><router-link to="/formation" class="nav-link">Formations</router-link></li>
+              <li><router-link to="/astuces" class="nav-link">Astuces</router-link></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-12">
+          <div class="links">
+            <ul>
+              <li><router-link to="/contexte" class="nav-link">Mention légales</router-link></li>
+              <li><router-link to="/assurance" class="nav-link">Contact</router-link></li>
+              <li><router-link to="/formation" class="nav-link">Conditions générale d'utilisation</router-link></li>
+              <li><router-link to="/astuces" class="nav-link">Protection des données personnelles</router-link></li>
+            </ul>
           </div>
         </div>
 
         <!-- Réseaux sociaux -->
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-12">
           <div class="social">
             <p>Suivez nous sur nos réseaux sociaux</p>
             <a href="#" class="facebook"><i class="fab fa-facebook" style="color: #4267B2;"></i></a>
@@ -40,9 +54,9 @@ export default {
 </script>
 
 <style scoped>
-/* Personnalisez le style de votre pied de page ici */
+
 .footer {
-  background-color: #f8f9fa;
+  background-color: #ffcc66;
   padding: 20px 0;
 }
 
@@ -50,18 +64,46 @@ export default {
   max-width: 100px;
 }
 
+.info p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
 .links a {
-  color: #333;
+  color: #000000;
   margin-right: 20px;
 }
 
+.links p {
+  font-size: 18px;
+}
+
 .social p {
-  font-size: 14px;
+  font-size: 18px;
   margin-bottom: 10px;
 }
 
 .social a {
-  font-size: 20px;
+  font-size: 30px;
   margin-right: 10px;
+}
+
+.links ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.links li {
+  margin-bottom: 20px; /* Réduire l'espace entre les éléments */
+}
+
+.links .nav-link {
+  text-decoration: none;
+  color: #000;
+  display: inline; /* Limite la zone cliquable au texte */
+}
+
+.links .nav-link:hover {
+  color: #ffffff;
 }
 </style>
