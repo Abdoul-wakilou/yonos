@@ -56,7 +56,7 @@ export default {
 <style scoped>
 
 .footer {
-  background-color: #ffcc66;
+  background-color: #993399;
   padding: 20px 0;
 }
 
@@ -67,10 +67,11 @@ export default {
 .info p {
   font-size: 18px;
   margin-top: 10px;
+  color: #fff;
 }
 
 .links a {
-  color: #000000;
+  color: #fff;
   margin-right: 20px;
 }
 
@@ -81,6 +82,7 @@ export default {
 .social p {
   font-size: 18px;
   margin-bottom: 10px;
+  color: #fff;
 }
 
 .social a {
@@ -99,11 +101,11 @@ export default {
 
 .links .nav-link {
   text-decoration: none;
-  color: #000;
+  color: #fff;
   display: inline; /* Limite la zone cliquable au texte */
 }
 
 .links .nav-link:hover {
-  color: #ffffff;
+  color: #2c6bf5;
 }
 </style>

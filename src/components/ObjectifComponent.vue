@@ -19,7 +19,7 @@
                         <div class="icon"><img src="../assets/img/tribunal.png" class="img-fluid img" alt=""></div>
                         <h5 class="card-title">Maîtriser mon budget en assurance</h5>
                         <p class="card-text">Vous choisissez un contrat selon votre budget, grâce à nos conseils pour vos devis et également lors de vos renouvellements.</p>
-                        <router-link to="/devis" class="btn btn-custom">Effectuer un devis</router-link>
+                        <router-link to="/assurrance" class="btn btn-custom">Effectuer un devis</router-link>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                         <div class="icon"><img src="../assets/img/cloud.png" class="img-fluid img" alt=""></div>
                         <h5 class="card-title">Piloter mes contrats au même endroit</h5>
                         <p class="card-text">Vous réalisez vos démarches même en changeant d'assureur, grâce à la centralisation de vos contrats sur notre plateforme.</p>
-                        <router-link to="/contrat" class="btn btn-custom">Confier mes contrats</router-link>
+                        <router-link to="/assurrance" class="btn btn-custom">Confier mes contrats</router-link>
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                         <div class="icon"><img src="../assets/img/lampe.png" class="img-fluid img" alt=""></div>
                         <h5 class="card-title">Prendre les bonnes décisions</h5>
                         <p class="card-text">Vous obtenez des conseils pratiques pour apprendre à mieux gérer vos assurances, grâce à nos contenus pédagogiques.</p>
-                        <router-link to="/comprendre-assurance" class="btn btn-custom">Comprendre l'assurance</router-link>
+                        <router-link to="/formation" class="btn btn-custom">Comprendre l'assurance</router-link>
                     </div>
                 </div>
             </div>

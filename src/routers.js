@@ -12,6 +12,8 @@ import ComprendreAssurranceComponent from './components/ComprendreAssurranceComp
 import ContexteComponent from './components/ContexteComponent.vue'
 import CalendrierComponent from './components/CalendrierComponent.vue'
 import TemoignageComponent from './components/TemoignageComponent.vue'
+import ResultatComponent from './components/ResultatComponent.vue'
+
 
 
 import { createRouter, createWebHistory } from 'vue-router'
@@ -31,6 +33,11 @@ const routes = [
         name: 'Contexte',
         component: ContexteComponent,
         path: '/contexte'
+    },
+    {
+        name: 'resultat',
+        component: ResultatComponent,
+        path: '/resultat'
     },
     {
         name: 'Objectif',

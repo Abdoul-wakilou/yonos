@@ -50,12 +50,10 @@
         </div>
         
         <div v-if="step === 4" class="step-container">
-          <h2>Quel âge avez vous ?</h2>
-          <div class="options-container">
-            <button type="button" @click="selectProfile('particulier')" class="option-button">Je suis un particulier</button>
-            <button type="button" @click="selectProfile('professionnel')" class="option-button">Je suis un professionnel</button>
-            <button type="button" @click="selectProfile('entreprise')" class="option-button">Je suis une entreprise</button>
-            <button type="button" @click="selectProfile('association')" class="option-button">Je suis une association</button>
+          <h2>Quel âge avez-vous ?</h2>
+          <input type="number" v-model="age" placeholder="0 ans" class="age-input" min="0" style="border: 1px solid #ccc; border-radius: 25px; padding: 10px; margin: 30px; width: 50%; box-sizing: border-box;" />
+          <div style="margin-top: 10px;">
+            <button type="button" @click="nextStep" class="next-button" style="background-color: green; color: white; padding: 10px; border: none; border-radius: 0px; width: 20%; cursor: pointer;">Suivant</button>
           </div>
         </div>
         
@@ -71,21 +69,17 @@
 
         <div v-if="step === 6" class="step-container">
           <h2>Combien avez-vous d'enfant ?</h2>
-          <div class="options-container">
-            <button type="button" @click="selectProfile('particulier')" class="option-button">Je suis un particulier</button>
-            <button type="button" @click="selectProfile('professionnel')" class="option-button">Je suis un professionnel</button>
-            <button type="button" @click="selectProfile('entreprise')" class="option-button">Je suis une entreprise</button>
-            <button type="button" @click="selectProfile('association')" class="option-button">Je suis une association</button>
+          <input type="number" v-model="enfant" placeholder="0 enfant"  min="0" step="1" class="age-input" style="border: 1px solid #ccc; border-radius: 25px; padding: 10px; margin: 30px; width: 50%; box-sizing: border-box;" />
+          <div style="margin-top: 10px;">
+            <button type="button" @click="nextStep" class="next-button" style="background-color: green; color: white; padding: 10px; border: none; border-radius: 0px; width: 20%; cursor: pointer;">Suivant</button>
           </div>
         </div>
 
         <div v-if="step === 7" class="step-container">
           <h2>Combien d'enfant sont scolarisés ?</h2>
-          <div class="options-container">
-            <button type="button" @click="selectProfile('particulier')" class="option-button">Je suis un particulier</button>
-            <button type="button" @click="selectProfile('professionnel')" class="option-button">Je suis un professionnel</button>
-            <button type="button" @click="selectProfile('entreprise')" class="option-button">Je suis une entreprise</button>
-            <button type="button" @click="selectProfile('association')" class="option-button">Je suis une association</button>
+          <input type="number" v-model="enfantscolarise" placeholder="0 enfant scolarisé"  min="0" step="1" class="age-input" style="border: 1px solid #ccc; border-radius: 25px; padding: 10px; margin: 30px; width: 50%; box-sizing: border-box;" />
+          <div style="margin-top: 10px;">
+            <button type="button" @click="nextStep" class="next-button" style="background-color: green; color: white; padding: 10px; border: none; border-radius: 0px; width: 20%; cursor: pointer;">Suivant</button>
           </div>
         </div>
 
@@ -108,11 +102,9 @@
 
         <div v-if="step === 10" class="step-container">
           <h2>Où est située votre résidence principale ?</h2>
-          <div class="options-container">
-            <button type="button" @click="selectProfile('particulier')" class="option-button">Je suis un particulier</button>
-            <button type="button" @click="selectProfile('professionnel')" class="option-button">Je suis un professionnel</button>
-            <button type="button" @click="selectProfile('entreprise')" class="option-button">Je suis une entreprise</button>
-            <button type="button" @click="selectProfile('association')" class="option-button">Je suis une association</button>
+          <input type="text" v-model="villeresidence" placeholder="Ville" class="age-input" style="border: 1px solid #ccc; border-radius: 25px; padding: 10px; margin: 30px; width: 50%; box-sizing: border-box;" />
+          <div style="margin-top: 10px;">
+            <button type="button" @click="nextStep" class="next-button" style="background-color: green; color: white; padding: 10px; border: none; border-radius: 0px; width: 20%; cursor: pointer;">Suivant</button>
           </div>
         </div>
 
@@ -160,19 +152,59 @@
         </div>
 
         <div v-if="step === 16" class="step-container">
-          <h2>Lequel(s) de ces sport(s) pratiquez vous ?</h2>
+          <h2>Lequel(s) de ces sport(s) pratiquez-vous ?</h2>
           <div class="options-container">
-            <button type="button" @click="selectProfile('rugby')" class="option-button">Rugby</button>
-            <button type="button" @click="selectProfile('sport-combat')" class="option-button">Sport de combat</button>
-            <button type="button" @click="selectProfile('sport-mecanique')" class="option-button">Sport mécanique</button>
-            <button type="button" @click="selectProfile('sport-nautique-hors-natation')" class="option-button">Sport nautique hors natation</button>
-            <button type="button" @click="selectProfile('la-chasse')" class="option-button">La chasse</button>
-            <button type="button" @click="selectProfile('vtt-de-descente')" class="option-button">VTT de descente</button>
-            <button type="button" @click="selectProfile('sport-aériens')" class="option-button">Sport aériens</button>
-            <button type="button" @click="selectProfile('Course-pieds')" class="option-button">Course à pieds de plus de 42km</button>
-            <button type="button" @click="selectProfile('sport-de-montagne')" class="option-button">Sport de montagne</button>
+            <div>
+              <label class="mr-3 label">Rugby</label>
+              <input type="checkbox" class="checkbox" v-model="selectedSports" value="Rugby" />
+            </div>
+              
+            <div>
+              <label class="mr-3 label">Sport de combat</label>
+                <input type="checkbox" class="checkbox" v-model="selectedSports" value="Sport de combat" />
+            </div>
+            
+            <div>
+              <label class="mr-3 label">Sport mécanique</label>
+              <input type="checkbox" class="checkbox" v-model="selectedSports" value="Sport mécanique" />
+            </div>
+            
+            <div>
+              <label class="mr-3 label">Sport nautique hors natation</label>
+              <input type="checkbox" class="checkbox" v-model="selectedSports" value="Sport nautique hors natation" />
+            </div>
+            
+            <div>
+              <label class="mr-3 label">La chasse</label>
+              <input type="checkbox" class="checkbox" v-model="selectedSports" value="La chasse" />
+            </div>
+
+            <div>
+              <label class="mr-3 label">VTT de descente</label>
+              <input type="checkbox" class="checkbox" v-model="selectedSports" value="VTT de descente" />
+            </div>
+            
+            <div>
+              <label class="mr-3 label">Sport aériens</label>
+              <input type="checkbox" class="checkbox" v-model="selectedSports" value="Sport aériens" />
+            </div>
+
+            <div>
+              <label class="mr-3 label">Course à pieds de plus de 42km</label>
+              <input type="checkbox" class="checkbox" v-model="selectedSports" value="Course à pieds de plus de 42km" />
+            </div>
+
+            <div>
+              <label class="mr-3 label">Sport de montagne</label>
+              <input type="checkbox" class="checkbox" v-model="selectedSports" value="Sport de montagne" />
+            </div>
+
+          </div>
+          <div style="margin-top: 30px;">
+            <button type="button" @click="nextStep" class="next-button" style="background-color: green; color: white; padding: 10px; border: none; border-radius: 0px; width: 20%; cursor: pointer;">Suivant</button>
           </div>
         </div>
+
 
         <div v-if="step === 17" class="step-container">
           <h2>Où partez-vous régulièrement en vacances ?</h2>
@@ -209,59 +241,176 @@
 
         <div v-if="step === 21" class="step-container">
           <h2>Quelle(s) assurance(s) possédez vous ?</h2>
+        
           <div class="options-container">
-            <button type="button" @click="selectProfile('responsabilite-civile')" class="option-button">Responsabilité civile</button>
-            <button type="button" @click="selectProfile('sante')" class="option-button">Santé</button>
-            <button type="button" @click="selectProfile('Prévoyance')" class="option-button">Prévoyance</button>
-            <button type="button" @click="selectProfile('Prévoyance Accident')" class="option-button">Prévoyance Accident</button>
-            <button type="button" @click="selectProfile('Décès')" class="option-button">Décès</button>
-            <button type="button" @click="selectProfile('Obsèque')" class="option-button">Obsèque</button>
-            <button type="button" @click="selectProfile('Rapatriement')" class="option-button">Rapatriement</button>
-            <button type="button" @click="selectProfile('Retraite')" class="option-button">Retraite</button>
-            <button type="button" @click="selectProfile('Scolaire')" class="option-button">Scolaire</button>
-            <button type="button" @click="selectProfile('Assurance')" class="option-button">Assurance vie</button>
-            <button type="button" @click="selectProfile('GAV')" class="option-button">GAV</button>
-            <button type="button" @click="selectProfile('Dépendance')" class="option-button">Dépendance</button>
+            <div>
+              <label class="mr-3 label">Responsabilité civile</label>
+              <input type="checkbox" class="checkbox" v-model="ResponsabiliteCivile" value="ResponsabiliteCivile" />
+            </div>
+              
+            <div>
+              <label class="mr-3 label">Santé</label>
+                <input type="checkbox" class="checkbox" v-model="Prevoyance" value="Prévoyance" />
+            </div>
+            
+            <div>
+              <label class="mr-3 label">Prévoyance</label>
+              <input type="checkbox" class="checkbox" v-model="selectedSports" value="Sport mécanique" />
+            </div>
+            
+            <div>
+              <label class="mr-3 label">Prévoyance Accident</label>
+              <input type="checkbox" class="checkbox" v-model="PrevoyanceAccident" value="PrevoyanceAccident" />
+            </div>
+            
+            <div>
+              <label class="mr-3 label">Décès</label>
+              <input type="checkbox" class="checkbox" v-model="Deces" value="Deces" />
+            </div>
+
+            <div>
+              <label class="mr-3 label">Obsèque</label>
+              <input type="checkbox" class="checkbox" v-model="Obseque" value="Obseque" />
+            </div>
+            
+            <div>
+              <label class="mr-3 label">Rapatriement</label>
+              <input type="checkbox" class="checkbox" v-model="Rapatriement" value="Rapatriement" />
+            </div>
+
+            <div>
+              <label class="mr-3 label">Retraite</label>
+              <input type="checkbox" class="checkbox" v-model="Retraite" value="Retraite" />
+            </div>
+
+            <div>
+              <label class="mr-3 label">Scolaire</label>
+              <input type="checkbox" class="checkbox" v-model="Scolaire" value="Scolaire" />
+            </div>
+
+            <div>
+              <label class="mr-3 label">Assurance vie</label>
+              <input type="checkbox" class="checkbox" v-model="AssuranceVie" value="AssuranceVie" />
+            </div>
+
+            <div>
+              <label class="mr-3 label">GAV</label>
+              <input type="checkbox" class="checkbox" v-model="GAV" value="GAV" />
+            </div>
+
+            <div>
+              <label class="mr-3 label">Dépendance</label>
+              <input type="checkbox" class="checkbox" v-model="Dependance" value="Dependance" />
+            </div>
+
           </div>
+
+          <div style="margin-top: 30px;">
+            <button type="button" @click="nextStep" class="next-button" style="background-color: green; color: white; padding: 10px; border: none; border-radius: 0px; width: 20%; cursor: pointer;">Suivant</button>
+          </div>
+
         </div>
 
         <div v-if="step === 22" class="step-container">
           <h2>Quelle(s) assurance(s) possédez vous ?</h2>
           <div class="options-container">
-            <button type="button" @click="selectProfile('Habitation')" class="option-button">Habitation</button>
-            <button type="button" @click="selectProfile('PNO')" class="option-button">PNO</button>
-            <button type="button" @click="selectProfile('Automobile')" class="option-button">Automobile</button>
-            <button type="button" @click="selectProfile('Moto')" class="option-button">Moto</button>
-            <button type="button" @click="selectProfile('Velo-electrique')" class="option-button">Vélo électrique</button>
-            <button type="button" @click="selectProfile('NVEI')" class="option-button">NVEI</button>
-            <button type="button" @click="selectProfile('Objets-de-valeur')" class="option-button">Objets de valeur</button>
-            <button type="button" @click="selectProfile('Objets-Connectes')" class="option-button">Objets Connectés</button>
+            <div>
+              <label class="mr-3 label">Habitation</label>
+              <input type="checkbox" class="checkbox" v-model="Habitation" value="Habitation" />
+            </div>
+            <div>
+              <label class="mr-3 label">PNO</label>
+              <input type="checkbox" class="checkbox" v-model="PNO" value="PNO" />
+            </div>
+            <div>
+              <label class="mr-3 label">Moto</label>
+              <input type="checkbox" class="checkbox" v-model="Moto" value="Moto" />
+            </div>
+            <div>
+              <label class="mr-3 label">Automobile</label>
+              <input type="checkbox" class="checkbox" v-model="Automobile" value="Automobile" />
+            </div>
+            <div>
+              <label class="mr-3 label">Vélo électrique</label>
+              <input type="checkbox" class="checkbox" v-model="Veloelectrique" value="Veloelectrique" />
+            </div>
+            <div>
+              <label class="mr-3 label">NVEI</label>
+              <input type="checkbox" class="checkbox" v-model="NVEI" value="NVEI" />
+            </div>
+            <div>
+              <label class="mr-3 label">Objets de valeur</label>
+              <input type="checkbox" class="checkbox" v-model="Objetsdevaleur" value="Objetsdevaleur" />
+            </div>
+            <div>
+              <label class="mr-3 label">Objets Connectés</label>
+              <input type="checkbox" class="checkbox" v-model="ObjetsConnectes" value="ObjetsConnectes" />
+            </div>
+          </div>
+          <div style="margin-top: 30px;">
+            <button type="button" @click="nextStep" class="next-button" style="background-color: green; color: white; padding: 10px; border: none; border-radius: 0px; width: 20%; cursor: pointer;">Suivant</button>
           </div>
         </div>
 
         <div v-if="step === 23" class="step-container">
           <h2>Quelle(s) assurance(s) possédez vous ?</h2>
           <div class="options-container">
-            <button type="button" @click="selectProfile('Carte bancaire Standard')" class="option-button">Carte bancaire Standard</button>
-            <button type="button" @click="selectProfile('Carte bancaire premium')" class="option-button">Carte bancaire premium</button>
-            <button type="button" @click="selectProfile('Protection juridique')" class="option-button">Protection juridique</button>
-            <button type="button" @click="selectProfile('Animaux domestiques')" class="option-button">Animaux domestiques</button>
-            <button type="button" @click="selectProfile('Dommage ouvrage')" class="option-button">Dommage ouvrage</button>
+            <div>
+              <label class="mr-3 label">Carte bancaire Standard</label>
+              <input type="checkbox" class="checkbox" v-model="CartebancaireStandard" value="CartebancaireStandard" />
+            </div>
+            <div>
+              <label class="mr-3 label">Carte bancaire premium</label>
+              <input type="checkbox" class="checkbox" v-model="Cartebancairepremium" value="Cartebancairepremium" />
+            </div>
+            <div>
+              <label class="mr-3 label">Protection juridique</label>
+              <input type="checkbox" class="checkbox" v-model="Protectionjuridique" value="Protectionjuridique" />
+            </div>
+            <div>
+              <label class="mr-3 label">Animaux domestiques</label>
+              <input type="checkbox" class="checkbox" v-model="Animauxdomestiques" value="Animauxdomestiques" />
+            </div>
+            <div>
+              <label class="mr-3 label">Dommage ouvrage</label>
+              <input type="checkbox" class="checkbox" v-model="Dommageouvrage" value="Dommageouvrage" />
+            </div>
+          </div>
+
+          <div style="margin-top: 30px;">
+            <button type="button" @click="nextStep" class="next-button" style="background-color: green; color: white; padding: 10px; border: none; border-radius: 0px; width: 20%; cursor: pointer;">Suivant</button>
           </div>
         </div>
 
-        <div v-if="step === 23" class="step-container">
+        <div v-if="step === 24" class="step-container">
           <h2>Inscrivez-vous et recevez votre diagnostic</h2>
-          <div class="options-container">
-            <button type="button" @click="selectProfile('Carte bancaire Standard')" class="option-button">Carte bancaire Standard</button>
-            <button type="button" @click="selectProfile('Carte bancaire premium')" class="option-button">Carte bancaire premium</button>
-            <button type="button" @click="selectProfile('Protection juridique')" class="option-button">Protection juridique</button>
-            <button type="button" @click="selectProfile('Animaux domestiques')" class="option-button">Animaux domestiques</button>
-            <button type="button" @click="selectProfile('Dommage ouvrage')" class="option-button">Dommage ouvrage</button>
+          <div class="row">
+            <div class="col-lg-6 col-sm-12">
+              <div class="form-group">
+                <input type="text" class="form-control form-control-custom" required id="nom" nom="nom" placeholder="Nom">
+              </div>
+              <div class="mt-3 form-group">
+                <input type="text" class="form-control form-control-custom" required id="prenom" name="prenom" placeholder="Prenom">
+              </div>
+            </div>
+            <div class="col-lg-6 col-sm-12">
+              <div class="form-group">
+                <input type="email" class="form-control form-control-custom" required id="email" placeholder="Adresse e-mail">
+              </div>
+              <div class="mt-3 form-group">
+                <input type="password" class="form-control form-control-custom" required id="password" placeholder="Mot de passe">
+              </div>
+            </div>
           </div>
+
+          <div style="margin-top: 30px;">
+            <button type="submit" @click="redirectToResultat" class="next-button" style="background-color: green; color: white; padding: 10px; border: none; border-radius: 0px; width: 20%; cursor: pointer;">S'inscrire</button>
+          </div>
+
         </div>
         
       </form>
+      
     </div>
   </div>
 </template>
@@ -289,22 +438,29 @@ export default {
         q13: '',
         q14: '',
         q15: '',
-        q16: ''
+        q16: '',
+        q17: '',
+        q18: '',
+        q19: '',
+        q20: '',
+        q21: '',
+        q22: '',
+        q23: ''
       }
     };
   },
   computed: {
     progress() {
-      return (this.step - 1) * 25;
+      return (this.step - 1) * (100 / 24);
     }
   },
   methods: {
-    selectProfile(profile) {
-      this.formData.profile = profile;
+    selectProfile(profile, question) {
+      this.formData[question] = profile;
       this.nextStep();
     },
     nextStep() {
-      if (this.step < 5) {
+      if (this.step < 24) {
         this.step++;
       } else {
         this.submitForm();
@@ -315,11 +471,9 @@ export default {
         this.step--;
       }
     },
-    submitForm() {
-      // Soumettre le formulaire avec les données
-      console.log(this.formData);
-      // Ajouter le code pour soumettre les données au backend Laravel
-    }
+    redirectToResultat() {
+      this.$router.push('/resultat');
+    },
   }
 };
 </script>
@@ -336,6 +490,12 @@ export default {
     flex: 1 1 100%;
     max-width: 100%;
   }
+
+  .options-container div {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
 }
 .navbar-text {
   font-size: 1.5rem;
@@ -355,6 +515,38 @@ export default {
 .step-container {
   text-align: center;
   margin-top: 20px;
+}
+
+
+
+.options-container div {
+  align-items: center;
+  padding: 10px;
+  border: 2px solid #c1c1c1;
+  border-radius: 20px;
+  background-color: #fff;
+  width: calc(33.33% - 20px);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.options-container label {
+  font-size: 18px;
+  text-align: center;
+}
+
+.checkbox {
+  display: flex;
+  margin: 0;
+  text-align: right;
+  width: 20px;
+  height: 20px;
+}
+
+.checkbox:checked + label {
+  background-color: green;
+  border-color: green;
+  color: #fff;
 }
 
 .step-container h2 {
@@ -393,7 +585,5 @@ export default {
   justify-content: center;
   gap: 20px;
 }
-
-
 
 </style>
